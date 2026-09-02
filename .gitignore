@@ -1,0 +1,31 @@
+# macOS and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Local source designs, QA evidence, temporary files and release archives
+design/
+output/
+release/
+tmp/
+design-qa.md
+_site/
+*.psd
+
+# Unoptimized raster exports are kept locally. Only production PNG assets below
+# are committed; photographs are published as WebP.
+assets/images/*.png
+!assets/images/menu.png
+!assets/images/nav-chevron.png
+!assets/images/social-max.png
+!assets/images/social-vk.png
+!assets/images/shadow-badges.png
+!assets/images/shadow-calendar.png
+!assets/images/shadow-notebooks.png
+!assets/images/shadow-shopper.png
+!assets/images/sticker-choice.png
+!assets/images/sticker-pride.png
+
+# Superseded assets not referenced by the current layout
+assets/images/about-caption.svg
+assets/images/social.svg
