@@ -1412,7 +1412,7 @@ p {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 759px) {
   .container {
     width: min(340px, calc(100% - 40px));
   }
@@ -2107,7 +2107,7 @@ p {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1399px) {
+@media (min-width: 760px) and (max-width: 1399px) {
   .container {
     width: 750px;
   }
@@ -2713,7 +2713,7 @@ p {
   filter: brightness(0) saturate(100%) invert(82%) sepia(98%) saturate(1186%) hue-rotate(27deg) brightness(101%) contrast(105%);
 }
 
-@media (min-width: 768px) and (max-width: 1399px) {
+@media (min-width: 760px) and (max-width: 1399px) {
   .hit-card__content {
     display: block;
   }
@@ -2768,7 +2768,7 @@ p {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 759px) {
   .hit-card__content {
     display: block;
   }
@@ -3051,7 +3051,7 @@ p {
   letter-spacing: .01em;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 759px) {
   .site-nav {
     gap: 20px;
     font-size: 18px;
@@ -3127,7 +3127,7 @@ p {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1399px) {
+@media (min-width: 760px) and (max-width: 1399px) {
   .site-nav {
     gap: 22.15px;
   }

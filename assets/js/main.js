@@ -89,5 +89,5 @@ requestForm?.addEventListener('submit', (event) => {
 });
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 767) setMenuState(false);
+  if (window.innerWidth >= 760) setMenuState(false);
 });
