@@ -5,12 +5,32 @@ const dialog = document.querySelector('#request-dialog');
 const requestForm = dialog?.querySelector('.request-form');
 const formStatus = requestForm?.querySelector('.request-form__status');
 let dialogCloseTimer;
+let menuCloseTimer;
 
-const setMenuState = (isOpen) => {
+const setMenuState = (isOpen, { immediate = false } = {}) => {
   menuButton?.setAttribute('aria-expanded', String(isOpen));
   menuButton?.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
-  siteNav?.classList.toggle('is-open', isOpen);
   body.classList.toggle('menu-open', isOpen);
+
+  if (!siteNav) return;
+
+  window.clearTimeout(menuCloseTimer);
+
+  if (isOpen) {
+    siteNav.classList.remove('is-closing');
+    siteNav.classList.add('is-open');
+    return;
+  }
+
+  if (!immediate && siteNav.classList.contains('is-open') && window.innerWidth < 640) {
+    siteNav.classList.add('is-closing');
+    siteNav.classList.remove('is-open');
+    const closeDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 160 : 270;
+    menuCloseTimer = window.setTimeout(() => siteNav.classList.remove('is-closing'), closeDelay);
+    return;
+  }
+
+  siteNav.classList.remove('is-open', 'is-closing');
 };
 
 menuButton?.addEventListener('click', () => {
@@ -89,5 +109,5 @@ requestForm?.addEventListener('submit', (event) => {
 });
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth >= 760) setMenuState(false);
+  if (window.innerWidth >= 640) setMenuState(false, { immediate: true });
 });
