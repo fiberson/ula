@@ -8,6 +8,7 @@ design/
 output/
 release/
 tmp/
+.codex-audit/
 design-qa.md
 _site/
 *.psd
